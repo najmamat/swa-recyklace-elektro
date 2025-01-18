@@ -1,9 +1,9 @@
 # swa-recyklace-elektro
 
 ## TODO
-- [ ] Zadání, popis aplikace, požadavky, další souvislosti
-- [ ] UseCase diagram
-- [ ] Uživatelské role
+- [x] Zadání, popis aplikace, požadavky, další souvislosti
+- [x] UseCase diagram
+- [x] Uživatelské role
 
 ### Event oriented architektura
 - [ ] Návrh architektury
