@@ -28,7 +28,7 @@ Tento repozitář obsahuje řešení semestrální práce z předmětu `4IT575 S
 ## Řešitelé
 - [Najman Matouš](https://github.com/matousnajman) [najmamat]
 - [Veis Michael](https://github.com/michaelveis) []
-- [Fiedler Josef](https://github.com/josef-fiedler) [fiedler256]
+- [Fiedler Josef](https://github.com/fiedler256) [fiedler256]
 - [Beran Štěpán](https://github.com/stepanberan) [sberan1]
 
 ## Zadání
