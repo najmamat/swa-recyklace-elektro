@@ -5,13 +5,13 @@
 - [ ] UseCase diagram
 - [ ] Uživatelské role
 
-### Architektura 1
+### Event oriented architektura
 - [ ] Návrh architektury
 - [ ] Dokumentace architektury (Component diagram, Deployment diagram)
 - [ ] ADR (alespoň 3)
 - [ ] Výhody a nevýhody
 
-### Architektura 2  
+### Service oriented architektura (SOA)  
 - [ ] Návrh architektury
 - [ ] Dokumentace architektury (Component diagram, Deployment diagram)
 - [ ] ADR (alespoň 3)
