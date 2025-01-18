@@ -1,26 +1,26 @@
 # swa-recyklace-elektro
 
 ## TODO
-[ ] Zadání, popis aplikace, požadavky, další souvislosti
-[ ] UseCase diagram
-[ ] Uživatelské role
+- [ ] Zadání, popis aplikace, požadavky, další souvislosti
+- [ ] UseCase diagram
+- [ ] Uživatelské role
 
 ### Architektura 1
-[ ] Návrh architektury
-[ ] Dokumentace architektury (Component diagram, Deployment diagram)
-[ ] ADR (alespoň 3)
-[ ] Výhody a nevýhody
+- [ ] Návrh architektury
+- [ ] Dokumentace architektury (Component diagram, Deployment diagram)
+- [ ] ADR (alespoň 3)
+- [ ] Výhody a nevýhody
 
 ### Architektura 2  
-[ ] Návrh architektury
-[ ] Dokumentace architektury (Component diagram, Deployment diagram)
-[ ] ADR (alespoň 3)
-[ ] Výhody a nevýhody
+- [ ] Návrh architektury
+- [ ] Dokumentace architektury (Component diagram, Deployment diagram)
+- [ ] ADR (alespoň 3)
+- [ ] Výhody a nevýhody
 
 ### Zhodnocení
-[ ] Porovnání architektur
-[ ] Výběr vhodnější architektury
-[ ] Zdůvodnění výběru
+- [ ] Porovnání architektur
+- [ ] Výběr vhodnější architektury
+- [ ] Zdůvodnění výběru
 
 # Seminární práce
 Tento repozitář obsahuje řešení semestrální práce z předmětu `4IT575 Softwarové architektury`.
