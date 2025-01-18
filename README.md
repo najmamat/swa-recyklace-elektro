@@ -52,7 +52,7 @@ Stovky, snad tisíce až miliony...
 
 ### Uživatelské role a případy užití
 
-![Use Case Diagram](diagrams/uc-diagram.png)
+![Use Case Diagram](diagrams/use-case/uc-diagram.png)
 *Neúplný neformální UC diagram sloužící primárně k pochopení zadání*
 
 #### Neregistrovaný zákazník
