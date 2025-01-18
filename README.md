@@ -52,6 +52,9 @@ Stovky, snad tisíce až miliony...
 
 ### Uživatelské role a případy užití
 
+![Use Case Diagram](diagrams/uc-diagram.png)
+*Neúplný neformální UC diagram sloužící primárně k pochopení zadání*
+
 #### Neregistrovaný zákazník
 - Může si prohlížet katalog přijímaných zařízení
 - Může získat předběžnou cenovou nabídku za své zařízení
