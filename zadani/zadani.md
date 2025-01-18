@@ -28,3 +28,31 @@ Stovky, snad tisíce až miliony...
 - Musíme vést seznam elektronických zařízení, které jsme ochotni přijmout, protože se často mění.
 - Každé zařízení má svá vlastní pravidla pro posuzování/kontrolu.
 - Máme právo změnit původní cenovou nabídku zákazníkovi, pokud výrobek není v takovém stavu, v jakém byl zákazníkem deklarován.
+
+### Doplňující informace k zadání
+Po konzultaci byly upřesněny následující body:
+
+#### Doprava
+- Systém bude integrován s dopravci Zásilkovna a PPL
+- Přes tyto dopravce bude řešeno jak zasílání prázdných krabic zákazníkům, tak příjem zařízení k recyklaci
+
+#### Platby
+- Systém bude automaticky zpracovávat platby zákazníkům
+- Finální platba je iniciována technikem po kontrole zařízení jako poslední krok procesu
+
+#### Prodej zařízení
+- Funkční zařízení budou prodávána přes platformy eBay a Aukro
+- Prodej bude spravován dedikovaným správcem prodeje
+- Systém bude obsahovat napojení na tyto prodejní platformy
+
+#### Správa systému
+- Systém bude obsahovat administrátorské rozhraní pro správu:
+  - Katalogu přijímaných zařízení
+  - Pravidel pro posuzování zařízení
+  - Uživatelských účtů a rolí
+  - Cenových politik
+  - Integrací s dopravci a prodejními platformami
+
+#### Sledování zásilek
+- Zákazníci budou mít možnost sledovat stav své zakázky v reálném čase
+- Sledování bude integrováno s API dopravců
