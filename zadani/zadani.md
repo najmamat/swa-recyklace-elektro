@@ -1,58 +1,58 @@
-# Zadání seminární práce z předmětu 4IT575 - Softwarové Architektury
+# Software Architecture Course Assignment (4IT575)
 
-**Autoři:** Štěpán Beran, Matouš Najman, Josef Fiedler a Michael Veis
+**Authors:** Štěpán Beran, Matouš Najman, Josef Fiedler, and Michael Veis
 
-## Úkoly
-1. Na základě níže popsaných požadavků navrhněte dvě architektury vhodné pro implementaci dané aplikace.
-2. Navržené architektury zdokumentujte.
-3. V závěru zhodnoťte, která z vybraných architektur je vhodnější a proč.
+## Tasks
+1. Based on the requirements described below, design two suitable architectures for implementing the application.
+2. Document the proposed architectures.
+3. In conclusion, evaluate which of the selected architectures is more suitable and why.
 
-## Poznámka
-Pokud ze zadání přímo nevyplyne nějaká skutečnost, kterou potřebujete znát, domluvte se ve skupině, a sami ji dodefinujte, tak jako byste se na ni doptali zákazníka.
+## Note
+If any requirement is not explicitly stated in the assignment, discuss within the team and define it yourself, as you would inquire with the client.
 
-## Popis aplikace
-Velký obchod s elektronikou chce začít podnikat v oblasti recyklace elektroniky a potřebuje k tomu nový systém. Zákazníci mohou poslat svá drobná osobní elektronická zařízení nebo využívat místní kiosky v obchodním centru a případně získat peníze za své použité zařízení, pokud je ve funkčním stavu.
+## Application Description
+A large electronics retailer wants to start a business in electronics recycling and needs a new system. Customers can send their small personal electronic devices or use local kiosks in shopping centers and potentially receive money for their used device if it is in working condition.
 
-### Uživatelé
-Stovky, snad tisíce až miliony...
+### Users
+Hundreds, potentially thousands to millions...
 
-### Požadavky
-- Zákazníci mohou získat nabídku na použité osobní elektronické vybavení (telefony, fotoaparáty atd.) buď prostřednictvím webu, nebo kiosku v obchodním centru.
-- Zákazníci obdrží poštou krabici, pošlou své elektronické zařízení, a pokud je v dobrém stavu, dostanou zaplaceno.
-- Po obdržení zařízení se posoudí/zkontroluje, zda je lze recyklovat/bezpečně zlikvidovat nebo prodat (eBay atd.).
-- Společnost předpokládá, že každý měsíc přibude 5-10 nových typů elektroniky, které bude přijímat.
+### Requirements
+- Customers can receive offers for used personal electronic equipment (phones, cameras, etc.) either through the website or a kiosk in a shopping center.
+- Customers receive a box by mail, send their electronic device, and if it's in good condition, they get paid.
+- Upon receiving the device, it is assessed/checked whether it can be recycled/safely disposed of or sold (eBay, etc.).
+- The company expects to add 5-10 new types of electronics each month that they will accept.
 
-### Další souvislosti
-- Jedná se o vysoce konkurenční činnost a je to pro nás nový obor podnikání.
-- Pokud jsme určitý typ elektronického zařízení nepřijali za poslední rok ani jednou, odstraníme jej z našeho systému.
-- Musíme vést seznam elektronických zařízení, které jsme ochotni přijmout, protože se často mění.
-- Každé zařízení má svá vlastní pravidla pro posuzování/kontrolu.
-- Máme právo změnit původní cenovou nabídku zákazníkovi, pokud výrobek není v takovém stavu, v jakém byl zákazníkem deklarován.
+### Additional Context
+- This is a highly competitive activity and a new business area for us.
+- If we haven't received a certain type of electronic device even once in the past year, we remove it from our system.
+- We need to maintain a list of electronic devices we are willing to accept, as it changes frequently.
+- Each device has its own assessment/checking rules.
+- We have the right to change the original price offer to the customer if the product is not in the condition declared by the customer.
 
-### Doplňující informace k zadání
-Po konzultaci byly upřesněny následující body:
+### Additional Information
+Following consultation, these points were clarified:
 
-#### Doprava
-- Systém bude integrován s dopravci Zásilkovna a PPL
-- Přes tyto dopravce bude řešeno jak zasílání prázdných krabic zákazníkům, tak příjem zařízení k recyklaci
+#### Shipping
+- The system will be integrated with carriers Zásilkovna and PPL
+- These carriers will handle both sending empty boxes to customers and receiving devices for recycling
 
-#### Platby
-- Systém bude automaticky zpracovávat platby zákazníkům
-- Finální platba je iniciována technikem po kontrole zařízení jako poslední krok procesu
+#### Payments
+- The system will automatically process payments to customers
+- Final payment is initiated by the technician after device inspection as the last step of the process
 
-#### Prodej zařízení
-- Funkční zařízení budou prodávána přes platformy eBay a Aukro
-- Prodej bude spravován dedikovaným správcem prodeje
-- Systém bude obsahovat napojení na tyto prodejní platformy
+#### Device Sales
+- Functional devices will be sold through eBay and Aukro platforms
+- Sales will be managed by a dedicated sales manager
+- The system will include integration with these sales platforms
 
-#### Správa systému
-- Systém bude obsahovat administrátorské rozhraní pro správu:
-  - Katalogu přijímaných zařízení
-  - Pravidel pro posuzování zařízení
-  - Uživatelských účtů a rolí
-  - Cenových politik
-  - Integrací s dopravci a prodejními platformami
+#### System Administration
+- The system will include an administrative interface for managing:
+  - Catalog of accepted devices
+  - Device assessment rules
+  - User accounts and roles
+  - Pricing policies
+  - Integrations with carriers and sales platforms
 
-#### Sledování zásilek
-- Zákazníci budou mít možnost sledovat stav své zakázky v reálném čase
-- Sledování bude integrováno s API dopravců
+#### Shipment Tracking
+- Customers will be able to track their order status in real-time
+- Tracking will be integrated with carrier APIs
