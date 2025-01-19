@@ -4,7 +4,7 @@
 - [x] Assignment, application description, requirements, additional context
 - [x] UseCase diagram
 - [x] User roles
-- [ ] UseCase diagram to english
+- [x] UseCase diagram to english
 
 ### Event-oriented Architecture
 - [ ] Architecture design
@@ -53,7 +53,7 @@ Hundreds, potentially thousands to millions...
 
 ### User Roles and Use Cases
 
-![Use Case Diagram](diagrams/use-case/uc-diagram.png)
+![Use Case Diagram](diagrams/use-case/uc-diagram-eng.png)
 *Informal UC diagram primarily serving for understanding the assignment*
 
 #### Unregistered Customer
