@@ -1,3 +1,5 @@
+# ADR 005: Localization Strategy
+
 ## Status
 Approved
 
