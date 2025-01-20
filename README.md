@@ -14,7 +14,7 @@
 
 ### Service-oriented Architecture (SOA)  
 - [ ] Architecture design
-- [ ] Architecture documentation (Component diagram, Deployment diagram)
+- [x] Architecture documentation (Component diagram, Deployment diagram)
 - [ ] ADR (at least 3)
 - [x] Advantages and disadvantages
 
