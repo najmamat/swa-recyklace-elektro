@@ -16,7 +16,7 @@
 - [ ] Architecture design
 - [ ] Architecture documentation (Component diagram, Deployment diagram)
 - [ ] ADR (at least 3)
-- [ ] Advantages and disadvantages
+- [x] Advantages and disadvantages
 
 ### Evaluation
 - [ ] Architecture comparison
