@@ -9,26 +9,26 @@ Our electronics recycling system needs to handle complex business processes with
 ## Decision
 We will implement an SOA architecture using REST API, with the following key components:
 
-1. **1.	Enterprise Service Bus)**
+1. **1.	Enterprise Service Bus**
    - Central message broker 
    - Messages persistence for replay and audit
    - Topic-based message routing
 
-2. **Core Processors**
+2. **Core Services**
    - Device Catalog Management
    - Assessment Processing
    - Offer Management
 
-3. **Integration Processors with Circuit Breakers**
+3. **Integration Services**
    - Shipping Integration (PPL, Zásilkovna)
    - Sales Integration (eBay, Aukro)
    - Payment Integration (Stripe)
 
-4. **Support Processors**
+4. **Support Services**
    - Analytics
    - Customer Support
 
-5. **Frontend Applications**
+5. **Frontend Services**
    - Web Application
    - Kiosk Application
    - Admin Application
@@ -36,39 +36,23 @@ We will implement an SOA architecture using REST API, with the following key com
 ## Consequences
 
 ### Positive
-- Loose coupling between components
-- Easy to add new subscribers without affecting existing ones
-- Built-in event history and audit trail
+- Organized Code
+- Easy to add new services without affecting existing ones
 - Better scalability and resilience
 - Asynchronous processing capabilities
 - Clear separation of concerns
 
 ### Negative
-- Increased complexity in event management
-- Need for event versioning
-- Eventually consistent data
-- Learning curve for development team
+- Increased complexity 
+- Performanc overhead
+- Testing Challenges
+- Security risks
 
-## Technical Details
-- Event metadata structure:
-  ```json
-  {
-    "eventId": "UUID",
-    "timestamp": "ISO-8601",
-    "version": "1.0",
-    "correlationId": "UUID",
-    "causationId": "UUID",
-    "type": "EventType",
-    "data": {}
-  }
-  ```
-
-- Key event flows:
-  1. Device Assessment Flow
-  2. Offer Creation Flow
-  3. Payment Flow
-  4. Shipping Flow
-  5. Sales Flow
+## Mitigation Strategies
+- Simplify Service Management 
+- Improve Performance
+- Enhance Testing Processes
+- Strengthen Security
 
 ## Infrastructure
 - NGINX Load Balancer
