@@ -1,31 +1,85 @@
-# ADR 001: Adoption of Event-Driven Architecture
+# ADR 001: Event-Driven Architecture Using Apache Kafka
 
 ## Status
 Accepted
 
 ## Context
-The electronics recycling system needs to handle complex workflows with multiple steps, integrate with various external services, and scale efficiently. The system needs to process device submissions, handle shipping logistics, manage assessments, and coordinate payments while maintaining consistency and reliability.
+Our electronics recycling system needs to handle complex business processes with multiple steps, integrate with various external systems, and scale to support thousands to millions of users. The system needs to be resilient, maintainable, and able to evolve over time.
 
 ## Decision
-We will implement an event-driven architecture using Apache Kafka as the central event bus, with event sourcing for critical business processes.
+We will implement an event-driven architecture using Apache Kafka as our central event bus, with the following key components:
+
+1. **Event Bus (Apache Kafka)**
+   - Central message broker for all system events
+   - Event persistence for replay and audit
+   - Topic-based message routing
+   - Event sourcing capabilities
+
+2. **Core Processors**
+   - Device Catalog Management
+   - Assessment Processing
+   - Offer Management
+
+3. **Integration Processors with Circuit Breakers**
+   - Shipping Integration (PPL, Zásilkovna)
+   - Sales Integration (eBay, Aukro)
+   - Payment Integration (Stripe)
+
+4. **Support Processors**
+   - Analytics
+   - Customer Support
+
+5. **Frontend Applications**
+   - Web Application
+   - Kiosk Application
+   - Admin Application
 
 ## Consequences
 
 ### Positive
-- Loose coupling between services enables independent scaling and deployment
-- Asynchronous processing improves system responsiveness
-- Event sourcing provides complete audit trail of all transactions
-- Easy to add new features by subscribing to existing events
-- Natural fit for the business domain where each step in the recycling process can be modeled as events
+- Loose coupling between components
+- Easy to add new subscribers without affecting existing ones
+- Built-in event history and audit trail
+- Better scalability and resilience
+- Asynchronous processing capabilities
+- Clear separation of concerns
 
 ### Negative
-- Increased complexity in handling eventual consistency
-- Need for careful event schema design and versioning
-- Additional operational complexity in managing Kafka cluster
-- Learning curve for developers not familiar with event-driven patterns
+- Increased complexity in event management
+- Need for event versioning
+- Eventually consistent data
+- Learning curve for development team
 
 ## Technical Details
-- Apache Kafka will serve as the central event bus
-- Events will be stored in Apache Cassandra for durability
-- CQRS pattern will be implemented for complex queries
-- Event schema versioning will use Apache Avro 
+- Event metadata structure:
+  ```json
+  {
+    "eventId": "UUID",
+    "timestamp": "ISO-8601",
+    "version": "1.0",
+    "correlationId": "UUID",
+    "causationId": "UUID",
+    "type": "EventType",
+    "data": {}
+  }
+  ```
+
+- Key event flows:
+  1. Device Assessment Flow
+  2. Offer Creation Flow
+  3. Payment Flow
+  4. Shipping Flow
+  5. Sales Flow
+
+## Infrastructure
+- NGINX Load Balancer
+- Redis for caching
+- PostgreSQL for persistent storage
+- Elasticsearch for search capabilities
+
+## Review Trigger
+This decision should be reviewed if:
+- System scale exceeds Kafka's capabilities
+- New requirements demand synchronous processing
+- Event complexity becomes unmanageable
+- Performance metrics indicate issues 
