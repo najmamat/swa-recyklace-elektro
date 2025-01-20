@@ -1,57 +1,84 @@
-ADR 001: SOA Architecture using REST API
-Status
+# ADR 001: Event-Driven Architecture Using Apache Kafka
+
+## Status
 Accepted
-Context
+
+## Context
 Our electronics recycling system needs to handle complex business processes with multiple steps, integrate with various external systems, and scale to support thousands to millions of users. The system needs to be resilient, maintainable, and able to evolve over time.
-Decision
+
+## Decision
 We will implement an SOA architecture using REST API, with the following key components:
-1.	Enterprise Service Bus
-o	Central message broker 
-o	Messages persistence for replay and audit
-o	Topic-based message routing
-2.	Core Services
-o	Device Catalog Management
-o	Assessment Processing
-o	Offer Management
-3.	Integration Services 
-o	Shipping Integration (PPL, Zásilkovna)
-o	Sales Integration (eBay, Aukro)
-o	Payment Integration (Stripe)
-4.	Support Services
-o	Analytics
-o	Customer Support
-5.	Frontends
-o	Web Application
-o	Kiosk Application
-o	Admin Application
-Consequences
-Advantages
-o	Organized Code
-o	Reusability
-o	Scalability
-o	Flexibility
-o	Interoperability
-Disadvantages
-o	Increased Complexity
-o	Performance Overhead
-o	Testing Challenges
-o	Security Risks
 
-Mitigation Strategies
-o	Simplify Service Management
-o	Improve Performance
-o	Enhance Testing Processes
-o	Strengthen Security
+1. **1.	Enterprise Service Bus)**
+   - Central message broker 
+   - Messages persistence for replay and audit
+   - Topic-based message routing
 
-Infrastructure
-•	NGINX Load Balancer
-•	Redis for caching
-•	PostgreSQL for persistent storage
-•	Elastic search for search capabilities
-Review Trigger
+2. **Core Processors**
+   - Device Catalog Management
+   - Assessment Processing
+   - Offer Management
+
+3. **Integration Processors with Circuit Breakers**
+   - Shipping Integration (PPL, Zásilkovna)
+   - Sales Integration (eBay, Aukro)
+   - Payment Integration (Stripe)
+
+4. **Support Processors**
+   - Analytics
+   - Customer Support
+
+5. **Frontend Applications**
+   - Web Application
+   - Kiosk Application
+   - Admin Application
+
+## Consequences
+
+### Positive
+- Loose coupling between components
+- Easy to add new subscribers without affecting existing ones
+- Built-in event history and audit trail
+- Better scalability and resilience
+- Asynchronous processing capabilities
+- Clear separation of concerns
+
+### Negative
+- Increased complexity in event management
+- Need for event versioning
+- Eventually consistent data
+- Learning curve for development team
+
+## Technical Details
+- Event metadata structure:
+  ```json
+  {
+    "eventId": "UUID",
+    "timestamp": "ISO-8601",
+    "version": "1.0",
+    "correlationId": "UUID",
+    "causationId": "UUID",
+    "type": "EventType",
+    "data": {}
+  }
+  ```
+
+- Key event flows:
+  1. Device Assessment Flow
+  2. Offer Creation Flow
+  3. Payment Flow
+  4. Shipping Flow
+  5. Sales Flow
+
+## Infrastructure
+- NGINX Load Balancer
+- Redis for caching
+- PostgreSQL for persistent storage
+- Elasticsearch for search capabilities
+
+## Review Trigger
 This decision should be reviewed if:
-•	System scale exceeds Kafka's capabilities
-•	New requirements demand synchronous processing
-•	Event complexity becomes unmanageable
-•	Performance metrics indicate issues
-
+- System scale exceeds Kafka's capabilities
+- New requirements demand synchronous processing
+- Event complexity becomes unmanageable
+- Performance metrics indicate issues 
