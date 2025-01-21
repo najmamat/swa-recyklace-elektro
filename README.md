@@ -7,8 +7,9 @@
 - [x] UseCase diagram to english
 
 ### Event-oriented Architecture
-- [ ] Architecture design
-- [ ] Architecture documentation (Component diagram, Deployment diagram)
+- [x] Architecture design
+- [x] Architecture documentation (Component diagram, Deployment diagram)
+- [ ] Review of ADRs - should probably include some rejected, 002 might be a great example
 - [x] ADR (at least 3)
 - [x] Advantages and disadvantages
 
@@ -27,10 +28,10 @@
 This repository contains the solution for the course assignment from `4IT575 Software Architectures`.
 
 ## Team Members
-- [Najman Matouš](https://github.com/najmamat) [najmamat]
-- [Veis Michael](https://github.com/michaelveis) []
-- [Fiedler Josef](https://github.com/fiedler256) [fiedler256]
-- [Beran Štěpán](https://github.com/sberan1) [sberan1]
+- [Najman Matouš](https://github.com/najmamat) [najmamat] - najm06
+- [Veis Michael](https://github.com/misak94) [misak94] - veim01
+- [Fiedler Josef](https://github.com/fiedler256) [fiedler256] - feij00
+- [Beran Štěpán](https://github.com/sberan1) [sberan1] - bers06
 
 ## Assignment
 A large electronics retailer wants to start a business in electronics recycling and needs a new system. Customers can send their small personal electronic devices or use local kiosks in shopping centers and potentially receive money for their used device if it is in working condition.
