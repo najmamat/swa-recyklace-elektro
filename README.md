@@ -9,7 +9,7 @@
 ### Event-oriented Architecture
 - [x] Architecture design
 - [x] Architecture documentation (Component diagram, Deployment diagram)
-- [ ] Review of ADRs - should probably include some rejected, 002 might be a great example
+- [x] Review of ADRs - should probably include some rejected, 002 might be a great example
 - [x] ADR (at least 3)
 - [x] Advantages and disadvantages
 
