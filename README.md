@@ -104,10 +104,11 @@ Hundreds, potentially thousands to millions...
 -After considering both architectures, it was decided to implement the event basd Architecture.The main reason for this is the need to process a large number of asynchronous requests
 
 #### Scalability and asynchronous processing
--Both the event based architecture and SOA provide good scalability. The advantage of the event-based architecture is the asynchronous processing of the request
+Both the event based architecture and SOA provide good scalability. The advantage of the event-based architecture is the asynchronous processing of the request.The asynchronous processing in event-based architecture eliminates the need for immediate responses, which reduces bottlenecks and makes it better suited for handling burst traffic or processes that do not require immediate user feedback
 #### Real-time proccesing
--The event-based architecture is an ideal choice for processing a large number of requests in real time.
+An event-based architecture is an ideal choice for processing a large number of requests in real time. It is also good at dealing with sudden increases in requests.
 #### Data consistency
--With an event-based architecture, it is necessary to pay attention to data consistency and higher demands on the messaging system
-
+With an event-based architecture, it is necessary to pay attention to data consistency and higher demands on the messaging system.
+#### Complexity
+It is necessary to take into account that the implementation of an event-based architecture brings higher complexity in terms of orchestration, monitoring and logging. In the short term, SOA appears to be a less complex option. Its disadvantages would be reflected in the long-term expansion of the application
 
