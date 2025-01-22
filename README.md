@@ -14,13 +14,13 @@
 - [x] Advantages and disadvantages
 
 ### Service-oriented Architecture (SOA)  
-- [ ] Architecture design
+- [x] Architecture design
 - [x] Architecture documentation (Component diagram, Deployment diagram)
-- [ ] ADR (at least 3)
+- [x] ADR (at least 3)
 - [x] Advantages and disadvantages
 
 ### Evaluation
-- [ ] Architecture comparison
+- [x] Architecture comparison
 - [ ] Selection of more suitable architecture
 - [ ] Justification of selection
 
