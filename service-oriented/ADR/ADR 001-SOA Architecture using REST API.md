@@ -27,8 +27,10 @@ We will implement a **Service-Oriented Architecture (SOA)** using **RESTful APIs
 
 2. **Core Services**
    - Device Catalog Management
-   - Assessment Processing
-   - Offer Management
+   - Recycling & Selling Service
+   - Offer Management Service
+   - Payment Service
+   - Device Evaluation Service
 
 3. **Integration Services**
    - Shipping Integration (PPL, Zásilkovna)
@@ -36,8 +38,7 @@ We will implement a **Service-Oriented Architecture (SOA)** using **RESTful APIs
    - Payment Integration (Stripe)
 
 4. **Support Services**
-   - Analytics
-   - Customer Support
+   - CRM
 
 5. **Frontend Services**
    - Web Application
