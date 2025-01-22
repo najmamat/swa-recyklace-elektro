@@ -1,15 +1,26 @@
-# ADR 001: Event-Driven Architecture Using Apache Kafka
+# ADR 001: Implementation of SOA with RESTful APIs and IBM App Connect ESB
 
 ## Status
 Accepted
 
 ## Context
-Our electronics recycling system needs to handle complex business processes with multiple steps, integrate with various external systems, and scale to support thousands to millions of users. The system needs to be resilient, maintainable, and able to evolve over time.
+Our electronics recycling system requires a flexible and scalable architecture to handle:
+
+- A large and potentially growing user base.
+- Frequent changes in accepted device types.
+- Complex business processes involving multiple services and external integrations.
+
+We need an architecture that:
+
+- Supports independent development and deployment of components.
+- Facilitates integration with external partners.
+- Enhances scalability and maintainability.
 
 ## Decision
-We will implement an SOA architecture using REST API, with the following key components:
+We will implement a **Service-Oriented Architecture (SOA)** using **RESTful APIs**, centered around an **Enterprise Service Bus (ESB)** implemented with **IBM App Connect**.
 
 1. **1.	Enterprise Service Bus**
+   - IBM App Connect
    - Central message broker 
    - Messages persistence for replay and audit
    - Topic-based message routing
@@ -33,35 +44,18 @@ We will implement an SOA architecture using REST API, with the following key com
    - Kiosk Application
    - Admin Application
 
+6. **Cloud Logging and Monitoring Services**
+   - AWS CloudWatch
+   - AWS SNS
+
 ## Consequences
 
-### Positive
-- Organized Code
-- Easy to add new services without affecting existing ones
-- Better scalability and resilience
-- Asynchronous processing capabilities
-- Clear separation of concerns
+### Easier
+- **Flexibility**: Easy to add or modify services as business needs evolve.
+- **Reusability**: Services can be reused across different parts of the application.
+- **Improved Integration**: Simplifies communication with external partners.
 
-### Negative
-- Increased complexity 
-- Performanc overhead
-- Testing Challenges
-- Security risks
-
-## Mitigation Strategies
-- Simplify Service Management 
-- Improve Performance
-- Enhance Testing Processes
-- Strengthen Security
-
-## Infrastructure
-- NGINX Load Balancer
-- Redis for caching
-- PostgreSQL for persistent storage
-- Elasticsearch for search capabilities
-
-## Review Trigger
-This decision should be reviewed if:
-- New requirements demand synchronous processing
-- Event complexity becomes unmanageable
-- Performance metrics indicate issues 
+### More Difficult
+- **Complexity**: Requires coordination between multiple services and proper management of the ESB.
+- **Performance Overhead**: Inter-service communication can introduce latency.
+- **Operational Overhead**: Increased need for monitoring and maintaining multiple services.
