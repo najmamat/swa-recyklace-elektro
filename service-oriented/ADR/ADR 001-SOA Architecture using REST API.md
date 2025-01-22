@@ -62,7 +62,6 @@ We will implement an SOA architecture using REST API, with the following key com
 
 ## Review Trigger
 This decision should be reviewed if:
-- System scale exceeds Kafka's capabilities
 - New requirements demand synchronous processing
 - Event complexity becomes unmanageable
 - Performance metrics indicate issues 
