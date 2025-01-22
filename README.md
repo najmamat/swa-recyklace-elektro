@@ -101,7 +101,7 @@ Hundreds, potentially thousands to millions...
 - Can track shipment status and inform customers
 
 ## Architctures Evaluation
--After considering both architectures, it was decided to implement the event basd Architecture.The main reason for this is the need to process a large number of asynchronous requests
+After considering both architectures, it was decided to implement the event basd Architecture.The main reason for this is the need to process a large number of asynchronous requests
 
 #### Scalability and asynchronous processing
 Both the event based architecture and SOA provide good scalability. The advantage of the event-based architecture is the asynchronous processing of the request.The asynchronous processing in event-based architecture eliminates the need for immediate responses, which reduces bottlenecks and makes it better suited for handling burst traffic or processes that do not require immediate user feedback
