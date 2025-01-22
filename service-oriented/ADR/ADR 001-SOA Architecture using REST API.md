@@ -1,4 +1,4 @@
-# ADR 001: Implementation of SOA with RESTful APIs and IBM App Connect ESB
+# ADR 001: Implementation of SOA with RESTful APIs
 
 ## Status
 Accepted
