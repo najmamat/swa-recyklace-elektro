@@ -2,21 +2,22 @@
 
 ## Advantages
 
-### 1. Organized Code
+### 1. Architecture-Driven Code Organisation
 - Code is logically separated into independent services, enhancing modularity.
 - Improves transparency by clearly defining boundaries and responsibilities of services.
 - Enhances ease of maintenance by isolating issues within specific services.
+- Naturally suited for domain-driven design, which is highly relevant for handling the business logic in our project.
 
 ### 2. Reusability
 - Services can be reused across multiple applications or modules.
 - Encourages consistency and reduces redundancy in development.
 
 ### 3. Scalability
-- Individual services can be scaled independently based on demand.
 - Facilitates load distribution and optimized resource allocation.
+- Individual services can scale independently to handle thousands or millions of users as required.
 
 ### 4. Flexibility
-- Services can use different technologies and programming languages, enabling polyglot programming.
+- Services can use different technologies and programming languages.
 - Allows teams to choose the best tools for each specific service.
 
 ### 5. Interoperability
@@ -29,9 +30,8 @@
 - Managing multiple services introduces complexity in deployment, orchestration, and monitoring.
 - Requires robust DevOps practices to handle the complexity.
 
-### 2. Performance Overhead
-- Communication between services, often via network calls, adds latency compared to in-process calls.
-- Serialization and deserialization of data can increase processing time.
+### 2. Performance Limitations
+- Services relying on network calls may experience performance overhead, such as latency, particularly when communicating with external APIs like carriers or sales platforms.
 
 ### 3. Testing Challenges
 - Testing an entire system can be difficult due to dependencies and inter-service communication.
