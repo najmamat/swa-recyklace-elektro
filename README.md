@@ -30,7 +30,7 @@ This repository contains the solution for the course assignment from `4IT575 Sof
 ## Team Members
 - [Najman Matouš](https://github.com/najmamat) [najmamat] - najm06
 - [Veis Michael](https://github.com/misak94) [misak94] - veim01
-- [Fiedler Josef](https://github.com/fiedler256) [fiedler256] - feij00
+- [Fiedler Josef](https://github.com/fiedler256) [fiedler256] - fiej00
 - [Beran Štěpán](https://github.com/sberan1) [sberan1] - bers06
 
 ## Assignment
