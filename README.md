@@ -1,28 +1,17 @@
 # Electronics Recycling System
 
-## TODO
-- [x] Assignment, application description, requirements, additional context
-- [x] UseCase diagram
-- [x] User roles
-- [x] UseCase diagram to english
+## Architectures Evaluation
+After evaluating both architectures, the decision was made to implement the event-based architecture. The primary reason for this is the ability to process a large volume of asynchronous requests
 
-### Event-oriented Architecture
-- [x] Architecture design
-- [x] Architecture documentation (Component diagram, Deployment diagram)
-- [x] Review of ADRs - should probably include some rejected, 002 might be a great example
-- [x] ADR (at least 3)
-- [x] Advantages and disadvantages
+#### Scalability and asynchronous processing
+Both event-based architecture and SOA offer good scalability. However, event-based architecture has the advantage of asynchronous request processing. This eliminates the need for immediate responses, reducing bottlenecks and making it more suitable for handling traffic spikes or processes that do not require instant user feedback.
+#### Real-time processing
+Event-based architecture is particularly well-suited for handling a large number of real-time requests. It also effectively manages sudden surges in demand.
+#### Data consistency
+With an event-based approach, special attention must be given to maintaining data consistency, as well as the increased demands on the messaging system.
+#### Complexity
+Implementing an event-based architecture introduces greater complexity in terms of orchestration, monitoring, and logging. In the short term, SOA may seem like a simpler option, but its limitations could become evident as the application scales over time.
 
-### Service-oriented Architecture (SOA)  
-- [x] Architecture design
-- [x] Architecture documentation (Component diagram, Deployment diagram)
-- [x] ADR (at least 3)
-- [x] Advantages and disadvantages
-
-### Evaluation
-- [x] Architecture comparison
-- [ ] Selection of more suitable architecture
-- [ ] Justification of selection
 
 # Course Assignment
 This repository contains the solution for the course assignment from `4IT575 Software Architectures`.
@@ -52,7 +41,7 @@ Hundreds, potentially thousands to millions...
 - Each device has its own assessment/checking rules.
 - We have the right to change the original price offer to the customer if the product is not in the condition declared by the customer.
 
-### User Roles and Use Cases
+# User Roles and Use Cases
 
 ![Use Case Diagram](diagrams/use-case/uc-diagram-eng.png)
 *Informal UC diagram primarily serving for understanding the assignment*
@@ -100,15 +89,28 @@ Hundreds, potentially thousands to millions...
 - Can modify basic customer information
 - Can track shipment status and inform customers
 
-## Architctures Evaluation
-After considering both architectures, it was decided to implement the event basd Architecture.The main reason for this is the need to process a large number of asynchronous requests
 
-#### Scalability and asynchronous processing
-Both the event based architecture and SOA provide good scalability. The advantage of the event-based architecture is the asynchronous processing of the request.The asynchronous processing in event-based architecture eliminates the need for immediate responses, which reduces bottlenecks and makes it better suited for handling burst traffic or processes that do not require immediate user feedback
-#### Real-time proccesing
-An event-based architecture is an ideal choice for processing a large number of requests in real time. It is also good at dealing with sudden increases in requests.
-#### Data consistency
-With an event-based architecture, it is necessary to pay attention to data consistency and higher demands on the messaging system.
-#### Complexity
-It is necessary to take into account that the implementation of an event-based architecture brings higher complexity in terms of orchestration, monitoring and logging. In the short term, SOA appears to be a less complex option. Its disadvantages would be reflected in the long-term expansion of the application
+## TODO
+- [x] Assignment, application description, requirements, additional context
+- [x] UseCase diagram
+- [x] User roles
+- [x] UseCase diagram to english
 
+### Event-oriented Architecture
+- [x] Architecture design
+- [x] Architecture documentation (Component diagram, Deployment diagram)
+- [x] Review of ADRs - should probably include some rejected, 002 might be a great example
+- [x] ADR (at least 3)
+- [x] Advantages and disadvantages
+
+### Service-oriented Architecture (SOA)
+- [x] Architecture design
+- [x] Architecture documentation (Component diagram, Deployment diagram)
+- [x] ADR (at least 3)
+- [x] Advantages and disadvantages
+
+### Evaluation
+- [x] Architecture comparison
+- [x] Selection of more suitable architecture
+- [x] Justification of selection
+- [ ] Polish
