@@ -1,16 +1,55 @@
 # Electronics Recycling System
 
 ## Architectures Evaluation
-After evaluating both architectures, the decision was made to implement the event-based architecture. The primary reason for this is the ability to process a large volume of asynchronous requests
+After thorough analysis of both Event-Driven and Service-Oriented architectures against the system requirements, we recommend implementing the **Event-Driven Architecture**. Here's our detailed justification:
 
-#### Scalability and asynchronous processing
+### Trade-offs Considered
+
+1. **Complexity vs Flexibility**
+    - While Event-Driven Architecture introduces higher initial complexity, it provides better long-term flexibility
+    - The complexity is justified by the system's scale and integration requirements
+
+2. **Cost vs Scalability**
+    - Higher infrastructure costs (Kafka cluster) are offset by better scaling capabilities
+    - Reduced development costs for future integrations and features
+
+3. **Learning Curve vs Long-term Benefits**
+    - Initial team learning curve is outweighed by maintainability and extensibility benefits
+    - Better support for future business requirements and system evolution
+
+### Key Decision Factors
+
+1. **Scalability & Performance**
+    - Event-Driven Architecture better handles the requirement for "thousands to millions" of users through asynchronous processing and event streaming
+    - Kafka's partitioning enables horizontal scaling of event processing
+    - Better handling of traffic spikes in kiosks and web applications
+
+2. **Business Requirements Alignment**
+    - Natural fit for the dynamic nature of device catalog management (5-10 new devices monthly)
+    - Supports complex workflows: device assessment → price adjustment → customer notification → payment processing
+    - Enables real-time tracking of shipments and instant price updates
+    - Facilitates automated cleanup of unused device types (yearly requirement)
+
+3. **Integration Capabilities**
+    - Superior handling of external system integrations (Zásilkovna, PPL, eBay, Aukro)
+    - Built-in resilience through event replay and Circuit Breaker pattern
+    - Easier integration of future sales channels or shipping providers
+
+4. **Data Consistency & Management**
+    - Event sourcing provides complete audit trail of all transactions
+    - Better handling of distributed data and eventual consistency
+    - Enables replay of events for data recovery or analysis
+
+### Scalability and asynchronous processing
 Both event-based architecture and SOA offer good scalability. However, event-based architecture has the advantage of asynchronous request processing. This eliminates the need for immediate responses, reducing bottlenecks and making it more suitable for handling traffic spikes or processes that do not require instant user feedback.
-#### Real-time processing
+### Real-time processing
 Event-based architecture is particularly well-suited for handling a large number of real-time requests. It also effectively manages sudden surges in demand.
-#### Data consistency
+### Data consistency
 With an event-based approach, special attention must be given to maintaining data consistency, as well as the increased demands on the messaging system.
-#### Complexity
+### Complexity
 Implementing an event-based architecture introduces greater complexity in terms of orchestration, monitoring, and logging. In the short term, SOA may seem like a simpler option, but its limitations could become evident as the application scales over time.
+### Conclusion
+The Event-Driven Architecture provides the best foundation for building a scalable, resilient, and maintainable electronics recycling system that can grow with the business needs while maintaining high performance and reliability. 
 
 
 # Course Assignment
@@ -89,7 +128,6 @@ Hundreds, potentially thousands to millions...
 - Can modify basic customer information
 - Can track shipment status and inform customers
 
-
 ## TODO
 - [x] Assignment, application description, requirements, additional context
 - [x] UseCase diagram
@@ -113,4 +151,4 @@ Hundreds, potentially thousands to millions...
 - [x] Architecture comparison
 - [x] Selection of more suitable architecture
 - [x] Justification of selection
-- [ ] Polish
+- [x] Polish
