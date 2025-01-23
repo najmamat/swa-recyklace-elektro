@@ -58,3 +58,11 @@
 ### 4. Strengthen Security
 - Secure all endpoints with HTTPS and implement robust authentication methods like OAuth.
 - Deploy API gateways to centralize security policies and manage traffic effectively.
+
+
+
+# Service Oriented Architecture - Diagrams
+
+![Component Diagram](diagrams/component_diagram/component_diagram_SOA.PNG)
+
+![Deployment Diagram](diagrams/deployment_diagram/deployment_diagram_SOA.png)
