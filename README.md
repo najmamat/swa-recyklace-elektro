@@ -89,6 +89,50 @@ Hundreds, potentially thousands to millions...
 - Can modify basic customer information
 - Can track shipment status and inform customers
 
+## Architecture Evaluation
+
+After thorough analysis of both Event-Driven and Service-Oriented architectures against the system requirements, we recommend implementing the **Event-Driven Architecture**. Here's our detailed justification:
+
+### Key Decision Factors
+
+1. **Scalability & Performance**
+   - Event-Driven Architecture better handles the requirement for "thousands to millions" of users through asynchronous processing and event streaming
+   - Kafka's partitioning enables horizontal scaling of event processing
+   - Better handling of traffic spikes in kiosks and web applications
+
+2. **Business Requirements Alignment**
+   - Natural fit for the dynamic nature of device catalog management (5-10 new devices monthly)
+   - Supports complex workflows: device assessment → price adjustment → customer notification → payment processing
+   - Enables real-time tracking of shipments and instant price updates
+   - Facilitates automated cleanup of unused device types (yearly requirement)
+
+3. **Integration Capabilities**
+   - Superior handling of external system integrations (Zásilkovna, PPL, eBay, Aukro)
+   - Built-in resilience through event replay and Circuit Breaker pattern
+   - Easier integration of future sales channels or shipping providers
+
+4. **Data Consistency & Management**
+   - Event sourcing provides complete audit trail of all transactions
+   - Better handling of distributed data and eventual consistency
+   - Enables replay of events for data recovery or analysis
+
+### Trade-offs Considered
+
+1. **Complexity vs Flexibility**
+   - While Event-Driven Architecture introduces higher initial complexity, it provides better long-term flexibility
+   - The complexity is justified by the system's scale and integration requirements
+
+2. **Cost vs Scalability**
+   - Higher infrastructure costs (Kafka cluster) are offset by better scaling capabilities
+   - Reduced development costs for future integrations and features
+
+3. **Learning Curve vs Long-term Benefits**
+   - Initial team learning curve is outweighed by maintainability and extensibility benefits
+   - Better support for future business requirements and system evolution
+
+### Conclusion
+The Event-Driven Architecture provides the best foundation for building a scalable, resilient, and maintainable electronics recycling system that can grow with the business needs while maintaining high performance and reliability.
+
 
 ## TODO
 - [x] Assignment, application description, requirements, additional context
